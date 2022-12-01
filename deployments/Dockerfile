@@ -13,6 +13,8 @@ RUN /opt/keycloak/bin/kc.sh build
 
 FROM quay.io/keycloak/keycloak:20.0
 
+LABEL "org.opencontainers.image.source" "https://github.com/diwise/keycloak"
+
 COPY --from=builder /opt/keycloak/ /opt/keycloak/
 
 ENTRYPOINT ["/opt/keycloak/bin/kc.sh"]
